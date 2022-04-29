@@ -7,6 +7,7 @@ import (
 	"go_practice/ch2/practice3"
 	"go_practice/ch2/practice4"
 	"go_practice/ch2/practice5"
+	"go_practice/ch3/comma"
 )
 
 var num uint64 = 0b1111111111111111111111111111111111110011111111111111111111110011
@@ -33,4 +34,5 @@ func main() {
 	fmt.Println(complex)
 	fmt.Println(real(complex))
 	fmt.Println(imag(complex))
+	fmt.Println(comma.Comma("1234567890"))
 }
