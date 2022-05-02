@@ -37,4 +37,5 @@ func main() {
 	fmt.Println(comma.Comma("1234567890"))
 	fmt.Printf("%T, %[1]v\n", [...]int{1, 2, 3})
 	fmt.Printf("%T, %[1]v\n", [...]int{10: -1})
+	fmt.Printf("%q\n", []rune("Hello, 世界"))
 }
