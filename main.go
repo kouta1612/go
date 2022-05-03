@@ -38,4 +38,9 @@ func main() {
 	fmt.Printf("%T, %[1]v\n", [...]int{1, 2, 3})
 	fmt.Printf("%T, %[1]v\n", [...]int{10: -1})
 	fmt.Printf("%q\n", []rune("Hello, 世界"))
+	fmt.Printf("%T\n%1T\n%1v\n", []int{}, [3]int{}, len(map[string]int{"alice": 32, "bob": 18}))
+	msg := fmt.Sprintf("%q", []string{"aaa", "bbb"})
+	maped := map[string]int{msg: 1}
+	fmt.Println(maped)
+	fmt.Printf("%v\n", []rune("a"))
 }
