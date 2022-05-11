@@ -8,6 +8,8 @@ import (
 	"go_practice/ch2/practice4"
 	"go_practice/ch2/practice5"
 	"go_practice/ch3/comma"
+	"go_practice/ch6/geometry"
+	"time"
 )
 
 var num uint64 = 0b1111111111111111111111111111111111110011111111111111111111110011
@@ -43,4 +45,9 @@ func main() {
 	maped := map[string]int{msg: 1}
 	fmt.Println(maped)
 	fmt.Printf("%v\n", []rune("a"))
+	const day = 24 * time.Hour
+	fmt.Println(day.Seconds())
+
+	p, q := geometry.Point{X: 1, Y: 2}, geometry.Point{X: 4, Y: 6}
+	fmt.Println(geometry.Distance(p, q))
 }
