@@ -13,9 +13,11 @@ import (
 )
 
 var num uint64 = 0b1111111111111111111111111111111111110011111111111111111111110011
-var x byte = 0b1000
+var x byte = 3
 
 func main() {
+	fmt.Println(string('x' - 'a' + 'A'))
+	fmt.Println(byte(num >> (x * 8)))
 	fmt.Println(practice1.CToK(0))
 	fmt.Println(practice1.KToC(0))
 	fmt.Println(practice1.KToF(0))
