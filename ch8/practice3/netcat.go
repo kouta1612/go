@@ -8,22 +8,22 @@ import (
 )
 
 func main() {
-	tcpAddr, err := net.ResolveTCPAddr("tcp", "localhost:8000")
+	conn, err := net.Dial("tcp", "localhost:8000")
 	if err != nil {
 		log.Fatal(err)
 	}
-	conn, err := net.DialTCP("tcp", nil, tcpAddr)
-	if err != nil {
-		log.Fatal(err)
+	tcpConn, ok := conn.(*net.TCPConn)
+	if !ok {
+		log.Fatal("this connection is not tcp.")
 	}
 	done := make(chan struct{})
 	go func() {
-		io.Copy(os.Stdout, conn)
+		io.Copy(os.Stdout, tcpConn)
 		log.Println("done")
 		done <- struct{}{}
 	}()
-	mustCopy(conn, os.Stdin)
-	conn.CloseWrite()
+	mustCopy(tcpConn, os.Stdin)
+	tcpConn.CloseWrite()
 	<-done
 }
 
