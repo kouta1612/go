@@ -14,21 +14,13 @@ func main() {
 	}()
 
 	go func() {
-		for {
-			x, ok := <-natures
-			if !ok {
-				break
-			}
+		for x := range natures {
 			squares <- x * x
 		}
 		close(squares)
 	}()
 
-	for {
-		x, ok := <-squares
-		if !ok {
-			break
-		}
+	for x := range squares {
 		fmt.Println(x)
 	}
 }
