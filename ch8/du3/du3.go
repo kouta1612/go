@@ -11,6 +11,7 @@ import (
 )
 
 var varbose = flag.Bool("v", false, "show verbose progress messages")
+var sema = make(chan struct{}, 20)
 
 func main() {
 	flag.Parse()
@@ -70,6 +71,10 @@ func workDir(dir string, n *sync.WaitGroup, filesizes chan<- int64) {
 }
 
 func dirents(dir string) []fs.DirEntry {
+	sema <- struct{}{}
+	defer func() {
+		<-sema
+	}()
 	entries, err := os.ReadDir(dir)
 	if err != nil {
 		fmt.Fprintf(os.Stdout, "du1: %v\n", err)
