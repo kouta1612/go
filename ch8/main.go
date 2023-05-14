@@ -24,13 +24,28 @@ func main() {
 		time.Sleep(1 * time.Second)
 		aborted <- struct{}{}
 	}()
+loop:
 	for {
 		select {
 		case <-aborted:
 			fmt.Println("aborted!")
-			return
+			break loop
 		default:
 			fmt.Println("doing.")
+		}
+	}
+
+	var done = make(chan struct{})
+	go func() {
+		close(done)
+	}()
+	for {
+		select {
+		case <-done:
+			fmt.Println("done!")
+			return
+		default:
+			fmt.Println("default.")
 		}
 	}
 }
