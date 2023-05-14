@@ -9,13 +9,13 @@ var (
 
 func Deposit(amount int) {
 	mu.Lock()
+	defer mu.Unlock()
 	balance += amount
-	mu.Unlock()
 }
 
 func Balance() int {
 	mu.Lock()
+	defer mu.Unlock()
 	b := balance
-	mu.Unlock()
 	return b
 }
