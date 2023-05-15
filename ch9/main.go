@@ -5,10 +5,39 @@ import (
 	"go_practice/ch9/bank1"
 	"go_practice/ch9/bank2"
 	"go_practice/ch9/bank3"
+	"sync"
 	"time"
 )
 
 func main() {
+	// bank関連の出力テスト
+	testBank()
+
+	// 出力のテスト
+	print()
+}
+
+func print() {
+	var wg sync.WaitGroup
+	var x, y int
+
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		x = 1
+		fmt.Print("y:", y, " ")
+	}()
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		y = 1
+		fmt.Print("x:", x, " ")
+	}()
+	wg.Wait()
+	fmt.Println()
+}
+
+func testBank() {
 	// bank1
 	go func() {
 		bank1.Deposit(200)
