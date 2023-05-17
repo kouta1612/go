@@ -1,23 +1,26 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"time"
 )
 
 func main() {
 	done := make(chan struct{})
-	go func() {
-		time.Sleep(3 * time.Second)
-		done <- struct{}{}
-	}()
-	for {
-		select {
-		case <-time.Tick(1 * time.Second):
-			fmt.Println("waiting...")
-		case <-done:
-			fmt.Println("done!")
-			return
-		}
+	for i := 0; i < 10; i++ {
+		go func(i int, done <-chan struct{}) {
+			for {
+				select {
+				case <-done:
+					log.Printf("finished %d\n", i)
+					return
+				default:
+					time.Sleep(100 * time.Millisecond)
+				}
+			}
+		}(i, done)
 	}
+
+	close(done)
+	time.Sleep(300 * time.Millisecond)
 }
