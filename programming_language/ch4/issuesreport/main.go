@@ -1,9 +1,9 @@
 package main
 
 import (
+	"go_practice/programming_language/ch4/github"
 	"log"
 	"os"
-	"programming_language/ch4/github"
 	"text/template"
 	"time"
 )

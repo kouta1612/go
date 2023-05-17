@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	"go_practice/programming_language/ch2/tempconv"
 	"os"
-	"programming_language/ch2/tempconv"
 	"strconv"
 )
 

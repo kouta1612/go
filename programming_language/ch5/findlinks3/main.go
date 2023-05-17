@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"go_practice/programming_language/ch5/links"
 	"log"
 	"os"
-	"programming_language/ch5/links"
 )
 
 func main() {

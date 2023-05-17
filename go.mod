@@ -1,4 +1,4 @@
-module programming_language
+module go_practice
 
 go 1.20
 

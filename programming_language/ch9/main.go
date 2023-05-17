@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"programming_language/ch9/bank1"
-	"programming_language/ch9/bank2"
-	"programming_language/ch9/bank3"
+	"go_practice/programming_language/ch9/bank1"
+	"go_practice/programming_language/ch9/bank2"
+	"go_practice/programming_language/ch9/bank3"
 	"sync"
 	"time"
 )
