@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"net/url"
 	"time"
 )
 
@@ -11,4 +12,7 @@ func main() {
 	seed := time.Now().UTC().UnixNano()
 	rng := rand.New(rand.NewSource(seed))
 	fmt.Println(rng.Intn(25))
+
+	parsedURL, _ := url.Parse("https://google.com")
+	fmt.Println(parsedURL.Scheme)
 }
