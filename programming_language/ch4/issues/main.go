@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"go_practice/ch4/github"
 	"log"
 	"os"
+	"programming_language/ch4/github"
 )
 
 func main() {
