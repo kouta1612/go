@@ -37,6 +37,23 @@ func TestComplexity(t *testing.T) {
 			`,
 			complexity: 2,
 		},
+		{
+			name: "if & for statement",
+			code: `
+				package main
+				func BubbleSort(l []int) []int {
+					for i := 0; i < len(l)-1; i++ {
+						for j := i + 1; j < len(l); j++ {
+							if l[i] > l[j] {
+								l[i], l[j] = l[j], l[i]
+							}
+						}
+					}
+					return l
+				}
+			`,
+			complexity: 4,
+		},
 	}
 
 	for _, testtestcase := range testcases {
@@ -55,6 +72,8 @@ func Count(node ast.Node) int {
 	ast.Inspect(node, func(node ast.Node) bool {
 		switch node.(type) {
 		case *ast.IfStmt:
+			count++
+		case *ast.ForStmt:
 			count++
 		}
 		return true
