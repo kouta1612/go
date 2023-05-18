@@ -67,21 +67,6 @@ func TestComplexity(t *testing.T) {
 	}
 }
 
-func Count(node ast.Node) int {
-	count := 1
-	ast.Inspect(node, func(node ast.Node) bool {
-		switch node.(type) {
-		case *ast.IfStmt:
-			count++
-		case *ast.ForStmt:
-			count++
-		}
-		return true
-	})
-
-	return count
-}
-
 // 引用: https://github.com/knsh14/gocc/blob/9078b24a5eb4377455473212ec67b8034de1439f/complexity/complexity_test.go
 func GetAST(t *testing.T, code string) ast.Node {
 	t.Helper()
