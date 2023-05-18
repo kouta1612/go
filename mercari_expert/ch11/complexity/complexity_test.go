@@ -24,6 +24,19 @@ func TestComplexity(t *testing.T) {
 			`,
 			complexity: 1,
 		},
+		{
+			name: "if statement",
+			code: `
+				package main
+				func Double(n int) int {
+					if n % 2 == 0 {
+						return 0
+					}
+					return n
+				}
+			`,
+			complexity: 2,
+		},
 	}
 
 	for _, testtestcase := range testcases {
@@ -39,6 +52,14 @@ func TestComplexity(t *testing.T) {
 
 func Count(node ast.Node) int {
 	count := 1
+	ast.Inspect(node, func(node ast.Node) bool {
+		switch node.(type) {
+		case *ast.IfStmt:
+			count++
+		}
+		return true
+	})
+
 	return count
 }
 
