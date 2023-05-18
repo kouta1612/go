@@ -1,4 +1,4 @@
-package ch05
+package benchmark_test
 
 import "testing"
 
