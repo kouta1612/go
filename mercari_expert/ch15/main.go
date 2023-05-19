@@ -8,8 +8,11 @@ import (
 
 func main() {
 	luhn := checkdigit.NewLuhn()
-	seed := "545762389823411"
-	digit, _ := luhn.Generate(seed)
+	seed := "54576238982341"
+	digit, err := luhn.Generate(seed)
+	if err != nil {
+		fmt.Println(err)
+	}
 	code := seed + strconv.Itoa(digit)
 	fmt.Println(seed, digit, code)
 	fmt.Println(luhn.Verify(code))
