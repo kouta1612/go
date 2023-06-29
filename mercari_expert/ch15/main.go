@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"go_practice/mercari_expert/ch15/checkdigit"
+	"go/mercari_expert/ch15/checkdigit"
 	"strconv"
 	"time"
 )

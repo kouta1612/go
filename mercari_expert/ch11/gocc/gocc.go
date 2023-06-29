@@ -3,7 +3,7 @@ package gocc
 import (
 	"go/ast"
 
-	"go_practice/mercari_expert/ch11/complexity"
+	"go/mercari_expert/ch11/complexity"
 
 	"golang.org/x/tools/go/analysis"
 	"golang.org/x/tools/go/analysis/passes/inspect"

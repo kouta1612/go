@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go_practice/programming_language/ch5/links"
+	"go/programming_language/ch5/links"
 	"log"
 	"os"
 )

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go_practice/mercari_expert/ch11/gocc"
+	"go/mercari_expert/ch11/gocc"
 
 	"golang.org/x/tools/go/analysis/singlechecker"
 )

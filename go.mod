@@ -1,4 +1,4 @@
-module go_practice
+module go
 
 go 1.20
 

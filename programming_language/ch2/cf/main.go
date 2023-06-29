@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go_practice/programming_language/ch2/tempconv"
+	"go/programming_language/ch2/tempconv"
 	"os"
 	"strconv"
 )

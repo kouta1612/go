@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go_practice/programming_language/ch4/github"
+	"go/programming_language/ch4/github"
 	"log"
 	"os"
 	"time"

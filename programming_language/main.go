@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"time"
 
-	"go_practice/programming_language/ch2/popcount"
-	"go_practice/programming_language/ch2/practice1"
-	"go_practice/programming_language/ch2/practice3"
-	"go_practice/programming_language/ch2/practice4"
-	"go_practice/programming_language/ch2/practice5"
-	"go_practice/programming_language/ch3/comma"
-	"go_practice/programming_language/ch6/geometry"
+	"go/programming_language/ch2/popcount"
+	"go/programming_language/ch2/practice1"
+	"go/programming_language/ch2/practice3"
+	"go/programming_language/ch2/practice4"
+	"go/programming_language/ch2/practice5"
+	"go/programming_language/ch3/comma"
+	"go/programming_language/ch6/geometry"
 )
 
 var num uint64 = 0b1111111111111111111111111111111111110011111111111111111111110011
